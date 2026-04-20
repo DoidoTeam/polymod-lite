@@ -655,7 +655,7 @@ class Polymod
 		polymod.hscript._internal.PolymodInterpEx._scriptClassDescriptors.clear();
 		polymod.hscript.HScriptable.ScriptRunner.clearScripts();
 		#else
-		Polymod.warning(SCRIPT_HSCRIPT_NOT_INSTALLED, "Cannot register script classes, HScript is not available.");
+		Polymod.notice(SCRIPT_HSCRIPT_NOT_INSTALLED, "Cannot register script classes, HScript is not available.");
 		#end
 	}
 
@@ -677,7 +677,7 @@ class Polymod
 			}
 		}
 		#else
-		Polymod.warning(SCRIPT_HSCRIPT_NOT_INSTALLED, "Cannot register script classes, HScript is not available.");
+		Polymod.notice(SCRIPT_HSCRIPT_NOT_INSTALLED, "Cannot register script classes, HScript is not available.");
 		#end
 	}
 
@@ -700,7 +700,7 @@ class Polymod
 			}
 		}
 		#else
-		Polymod.warning(SCRIPT_HSCRIPT_NOT_INSTALLED, "Cannot register script classes, HScript is not available.");
+		Polymod.notice(SCRIPT_HSCRIPT_NOT_INSTALLED, "Cannot register script classes, HScript is not available.");
 		#end
 	}
 
