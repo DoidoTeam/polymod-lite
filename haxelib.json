@@ -8,8 +8,6 @@
   "releasenote": "Dependencies, ZIP mods, blacklisting, and other improvements.",
   "contributors": ["MasterEric", "larsiusprime"],
   "dependencies": {
-    "thx.semver": "",
-    "jsonpath": "",
-    "jsonpatch": ""
+    "thx.semver": ""
   }
 }

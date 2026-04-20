@@ -2,8 +2,10 @@ package polymod.format;
 
 import haxe.Json;
 
+#if jsonpatch
 import json.JSONData;
 import json.patch.JSONPatch;
+#end
 import polymod.Polymod;
 import polymod.Polymod.PolymodError;
 import polymod.Polymod.PolymodErrorType;
@@ -29,7 +31,9 @@ class ParseRules
 			case CSV: new CSVParseFormat(',', true);
 			case TSV: new TSVParseFormat();
 			case XML: new XMLParseFormat();
+			#if jsonpatch
 			case JSON: new JSONParseFormat();
+			#end
 			case LINES: new LinesParseFormat(EndLineType.LF);
 			case PLAINTEXT: new PlainTextParseFormat();
 			default: new PlainTextParseFormat();
@@ -58,7 +62,9 @@ class ParseRules
 		rules.addFormat('csv', new CSVParseFormat(',', true));
 		rules.addFormat('tsv', new TSVParseFormat());
 		rules.addFormat('xml', new XMLParseFormat());
+		#if jsonpatch
 		rules.addFormat('json', new JSONParseFormat());
+		#end
 		rules.addFormat('txt', new PlainTextParseFormat());
 		return rules;
 	}
@@ -566,6 +572,7 @@ typedef JsonMergeStruct =
 	var merge:Array<JsonMergeEntry>;
 }
 
+#if jsonpatch
 class JSONParseFormat implements BaseParseFormat
 {
 	public var format:TextFileFormat;
@@ -643,6 +650,7 @@ class JSONParseFormat implements BaseParseFormat
 		return haxe.Json.stringify(data, replacer, space);
 	}
 }
+#end
 
 class PlainTextParseFormat implements BaseParseFormat // <String>
 {
