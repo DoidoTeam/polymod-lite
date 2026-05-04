@@ -1110,6 +1110,16 @@ enum PolymodErrorType
 enum abstract PolymodErrorCode(String) from String to String
 {
 	/**
+	 * Custom (Show)
+	 */
+	var CUSTOM_SHOW:String = 'custom_show';
+	
+	/**
+	 * Custom (Hide)
+	 */
+	var CUSTOM_HIDE:String = 'custom_hide';
+
+	/**
 	 * The mod's metadata file could not be parsed.
 	 * - Make sure the file contains valid JSON.
 	 */
